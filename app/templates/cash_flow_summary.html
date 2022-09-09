@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<head>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    
+    <style>
+
+   .td1{
+    border: .5px solid rgba(255, 255, 255, .3); ;
+    
+    
+ }
+ /* td ,th {
+    border: .5px solid rgba(255, 255, 255, .3); ;
+    
+ } */
+ .table-row{
+cursor:pointer;
+}
+.table-row:hover{
+    background-color: rgb(216, 155, 51);
+}
+.table-row1{
+cursor:pointer;
+}
+.table-row1:hover{
+    background-color: rgb(216, 155, 51);
+}
+.btn{
+    border: 1px solid rgb(103, 175, 220);
+    /* height: 30px;
+    text-align: center; */
+    
+    width: 95%;
+    
+
+    
+  }
+  .table1{
+    border: 1px solid rgb(103, 175, 220);
+  }
+  .selected{background-color:  rgb(216, 155, 51);color: #fff;font-weight: bold
+}
+  .selected1 {
+    background-color:  rgb(77, 154, 242);
+  }
+        
+    </style>
+</head>
+<body>
+    
+ 
+
+    <div class="container-fluid">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row d-flex " style="background-color: rgb(103, 175, 220);color:#fff;width:100%;margin: auto;">
+                    <div class="col ">Cash Flow Summary</div>
+                </div>
+                
+                <div class="table-responsive ">
+                    <table  class="table  first " style="background-color: rgba(33,57,77,255);color:#fff;" >
+                    
+                        <tr>
+                            <thead>
+                            <th rowspan="3" colspan="2"   class="align-middle text-white "> 
+                                <h6 class="d-flex align-items-sm-start par p-1 py-1" style="margin-left: 20px;"  >Inflow</h6>
+                                </th>
+                                <th rowspan="3"  class="text-white " style="width: 30px; text-align: center; width: 15%;">
+                                <h6 style=" font-size: 15px;">ABC Pvt LTD<br>
+                                    1-Apr-22 to 30-Apr-22</h6>
+                                </th>
+
+                                <th rowspan="3" colspan="2"   class="align-middle text-white "> 
+                                    <h6 class="d-flex align-items-sm-start par p-1 py-1" style="margin-left: 20px;">Outflow</h6>
+                                    </th>
+                                    <th rowspan="3"  class="text-white " style="width: 30px; text-align: center; width: 15%;">
+                                    <h6 style=" font-size: 15px; " >ABC Pvt LTD<br>
+                                        1-Apr-22 to 30-Apr-22</h6>
+                                    </th>
+                                
+                           
+                        </tr>
+                        
+                        </thead>
+                            
+                        
+                       
+                            
+                                
+                              
+                            
+                    
+
+
+                    
+
+                    <tbody>
+                        <tr>
+                        <td colspan="3" rowspan="100" class="td1" width="50%">
+                            <table class="table   " > 
+
+                                <!-- <div class="table-row" data-href="" >
+
+                                    <span style="text-align: start;" width="50%">Branch / Division fgdfgdg</span>
+                                    <span style="float: right;">25452257545</span>
+
+                                </div> -->
+                                <tbody>
+                                    <tr class="table-row" data-href="" >
+                           
+                                        <td  style="text-align: start;" width="80%">gtrtwrtertgfdgdfgdsfasgfzsgsgdgsggs</td>
+                                        <td style="text-align: end;">25452257545</td>
+                                        
+               
+                                    </tr>
+                                    <tr class="table-row" data-href="" >
+                           
+                                        <td  style="text-align: start;">
+                                            <h6 class="d-flex align-items-sm-start par foot" style="margin-left: 20px;"><b>Total</b></h6>
+                                        </td>
+                                        <td style="text-align: end;"><b>25452</b></td>
+                                        
+                                    </tr>
+                                    
+
+                                   
+                                    
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td colspan="3" rowspan="100" class="td1" width="50%">
+                            <table class="table  "   >
+                                <!-- <div class="table-row" data-href="" >
+
+                                    <span style="text-align: start;" width="50%">Branch / Division fgdfgdg</span>
+                                    <span style="float: right;">25452257545</span>
+
+                                </div> -->
+                               
+
+                                <tbody>
+                                    <tr class="table-row" data-href="" >
+                           
+                                        <td style="text-align: start;"  width="80%">gsdgfsdfgsgsgsgsggsggsgsgg</td>
+                                        <td style="text-align: end;">25452257545</td>
+                                        
+               
+                                    </tr>
+                                    
+                                    
+                                    <tr class="table-row" data-href="" >
+                           
+                                        <td  style="text-align: start;">
+                                            <h6 class="d-flex align-items-sm-start par foot" style="margin-left: 20px;"><b>Total</b></h6>
+                                        </td>
+                                        <td style="text-align: end;"><b>25452</b></td>
+                                        
+                                    </tr>
+                                   
+                                    
+                                
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>fasdgfdsfas</td>
+                    </tr>
+                    
+        
+
+                    </tbody>
+                    </table>
+
+
+                  </div>
+
+                  <table class="table1 col" style="text-align: center; margin-top: 10px;" >
+                    <thead>
+                        <th ><a href="{% url 'Index' %}" type="button"  class="btn p-1 px-4" >Quit</a></th>
+                        <th><button type="button"  class="btn p-1 px-4" onclick="myFunction()">Select</button></th>
+                        <th><button type="button"  class="btn p-1 px-1" onclick="removeSelectedRow()">Remove Line</button></th>
+                        <th><a href="" type="button"  class="btn p-1 px-1" >Restore Line</a></th>
+                    </thead>
+                </table>
+                <div style="margin-top: 1px; height: 10px ; width: 100%;"></div>
+
+       
+
+              
+                  
+
+
+               
+
+
+
+            </div>
+        </div>
+        
+    </div>
+
+<script>
+    $(document).ready(function($) {
+        $(".table-row").dblclick(function() {
+            window.document.location = $(this).data("href");
+        });
+    });
+</script>
+<script>
+            
+    var index;  // variable to set the selected row index
+    function getSelectedRow()
+    {
+        var table = document.getElementById("table1");
+        for(var i = 1; i < table.rows.length; i++)
+        {
+            table.rows[i].onclick = function()
+            {
+                // clear the selected from the previous selected row
+                // the first time index is undefined
+                if(typeof index !== "undefined"){
+                    table.rows[index].classList.toggle("selected");
+                }
+               
+                index = this.rowIndex;
+                this.classList.toggle("selected");
+
+            };
+        }
+            
+    }
+
+
+    getSelectedRow();
+
+    
+
+    
+    
+    
+    
+</script>
+
+<script>
+
+   
+function myFunction() {
+ var se = document.getElementsByClassName('selected');
+ se[0].style.backgroundColor = "lightblue";
+    
+}
+    </script>
+
+
+
+
+<script>
+function removeSelectedRow()
+        {
+            table.deleteRow(index);
+            
+        }
+</script>
+{% endblock %}
