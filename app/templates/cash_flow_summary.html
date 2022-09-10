@@ -22,7 +22,7 @@
  .table-row{
 cursor:pointer;
 }
-.table-row:hover{
+/* .table-row:hover{
     background-color: rgb(216, 155, 51);
 }
 .table-row1{
@@ -30,7 +30,7 @@ cursor:pointer;
 }
 .table-row1:hover{
     background-color: rgb(216, 155, 51);
-}
+} */
 .btn{
     border: 1px solid rgb(103, 175, 220);
     /* height: 30px;
@@ -64,7 +64,7 @@ cursor:pointer;
                 </div>
                 
                 <div class="table-responsive ">
-                    <table  class="table  first " style="background-color: rgba(33,57,77,255);color:#fff;" >
+                    <table  class="table  first " style="background-color: rgba(33,57,77,255);color:#fff;" id="tb1" >
                     
                         <tr>
                             <thead>
@@ -102,8 +102,8 @@ cursor:pointer;
 
                     <tbody>
                         <tr>
-                        <td colspan="3" rowspan="100" class="td1" width="50%">
-                            <table class="table   " > 
+                        <td colspan="3"  class="td1" width="50%">
+                            <table  class="table " style="width: 100%;"  id="table"> 
 
                                 <!-- <div class="table-row" data-href="" >
 
@@ -112,19 +112,21 @@ cursor:pointer;
 
                                 </div> -->
                                 <tbody>
-                                    <tr class="table-row" data-href="" >
+                                    {% for i in group %}
+                                    {% if i.Type == "Inflow" %}
+                                    <tr class="table-row" data-href="{% url 'group_cash_flow' %}" >
                            
-                                        <td  style="text-align: start;" width="80%">gtrtwrtertgfdgdfgdsfasgfzsgsgdgsggs</td>
-                                        <td style="text-align: end;">25452257545</td>
-                                        
-               
+                                        <td  style="text-align: start;" width="80%">{{i.Group}}</td>
+                                        <td style="text-align: end;">{{i.Amount}}</td>
                                     </tr>
+                                    {% endif %}
+                                    {% endfor %}
                                     <tr class="table-row" data-href="" >
                            
                                         <td  style="text-align: start;">
                                             <h6 class="d-flex align-items-sm-start par foot" style="margin-left: 20px;"><b>Total</b></h6>
                                         </td>
-                                        <td style="text-align: end;"><b>25452</b></td>
+                                        <td style="text-align: end;"><b>{{total_inflow}}</b></td>
                                         
                                     </tr>
                                     
@@ -135,8 +137,8 @@ cursor:pointer;
                             </table>
                         </td>
 
-                        <td colspan="3" rowspan="100" class="td1" width="50%">
-                            <table class="table  "   >
+                        <td colspan="3"  class="td1" width="50%">
+                            <table  class="table " style="width: 100%;"  id="table">
                                 <!-- <div class="table-row" data-href="" >
 
                                     <span style="text-align: start;" width="50%">Branch / Division fgdfgdg</span>
@@ -146,13 +148,15 @@ cursor:pointer;
                                
 
                                 <tbody>
-                                    <tr class="table-row" data-href="" >
+                                    {% for i in group %}
+                                    {% if i.Type == "Outflow" %}
+                                    <tr class="table-row" data-href="{% url 'group_cash_flow' %}" >
                            
-                                        <td style="text-align: start;"  width="80%">gsdgfsdfgsgsgsgsggsggsgsgg</td>
-                                        <td style="text-align: end;">25452257545</td>
-                                        
-               
+                                        <td  style="text-align: start;" width="80%">{{i.Group}}</td>
+                                        <td style="text-align: end;">{{i.Amount}}</td>
                                     </tr>
+                                    {% endif %}
+                                    {% endfor %}
                                     
                                     
                                     <tr class="table-row" data-href="" >
@@ -160,7 +164,7 @@ cursor:pointer;
                                         <td  style="text-align: start;">
                                             <h6 class="d-flex align-items-sm-start par foot" style="margin-left: 20px;"><b>Total</b></h6>
                                         </td>
-                                        <td style="text-align: end;"><b>25452</b></td>
+                                        <td style="text-align: end;"><b>{{total_outflow}}</b></td>
                                         
                                     </tr>
                                    
@@ -170,8 +174,8 @@ cursor:pointer;
                         </td>
                     </tr>
 
-                    <tr>
-                        <td>fasdgfdsfas</td>
+                    <tr  class="table-row" data-href="" >
+                        <td colspan="6" style="text-align: center; "><h6>Nett Inflow: {{net_flow}}</h6></td>
                     </tr>
                     
         
