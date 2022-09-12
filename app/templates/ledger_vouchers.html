@@ -80,7 +80,7 @@ cursor:pointer;
                 <div class="row  " style="height: 50px;">
                 <div class="col ">
                     <h6>
-                    <span class=" d-flex justify-content-start" style="margin-top: 8px;"><strong> Ledger: {{vch.Vouchers_name}}  </strong> </span>
+                    <span class=" d-flex justify-content-start" style="margin-top: 8px;"><strong> Ledger: {{ledger}}  </strong> </span>
                     <span class="d-flex  justify-content-end " style="margin-top: -15px;"> 1-Apr-22 to 30-Apr-22</span>
                 </h6>
                 </div>
@@ -101,24 +101,24 @@ cursor:pointer;
                     </thead>
 
                     <tbody >
-                        {% for i in voucher %}
+                        {% for i in ledger_vouchers %}
                         <tr class="table-row" >
-                            <input type="number" value="{{i.id}}" id="delid" hidden >
+                            
                             <td style="text-align: center;">{{i.Date}}</td>
                             <td colspan="2"><strong>{{i.Particulars}}</strong></td>
-                            <td style="text-align: center;"><strong>{{vch.Vouchers_name}}</strong></td>
-                            <td style="text-align: right;"><strong>{{forloop.counter}}</strong></td>
+                            <td style="text-align: center;"><strong>{{i.Vch_Type}}</strong></td>
+                            <td style="text-align: right;"><strong>{{i.Vch_No}}</strong></td>
                             <td  style="text-align: right;"><strong>
-                                {% if i.Debit_Amount %}
-                                {{i.Debit_Amount}}
+                                {% if i.Debit %}
+                                {{i.Debit}}
                                 {% endif %}
                             </strong></td>
                             <td  style="text-align: right;"><strong>
-                                {% if i.Credit_Amount %}
-                                {{i.Credit_Amount}}
+                                {% if i.Credit %}
+                                {{i.Credit}}
                                 {% endif %}
                             </strong></td>
-                            <th style="text-align: center;"><a href=""><a href="{% url 'Delete' m.id vch.id i.id %}" class="fa fa-trash" style="color: red;" ></a></th>
+                            <th style="text-align: center;"><a href=""><a href="" class="fa fa-trash" style="color: red;" ></a></th>
 
                         </tr>
                         {% endfor %}
