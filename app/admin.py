@@ -20,6 +20,9 @@ admin.site.register(Ledger_inflow_outflow)
 
 admin.site.register(Ledger_Vouchers)
 
+admin.site.register(Flow)
+
+
 
 
 

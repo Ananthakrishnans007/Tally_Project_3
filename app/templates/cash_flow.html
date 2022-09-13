@@ -70,7 +70,7 @@ cursor:pointer;
                               <h6 style="text-align: center; font-size: 15px;">
                                 
                                 <b>ABC Pvt LTD</b><br>
-                                  For 1-Apr-22</h6>
+                                  For 1-Apr-{% now 'y' %}</h6>
                               </th>
                               <tr>
                               <th colspan="2" style="text-align: center; font-size: 15px;" ><b>Cash Movement</b></th>
@@ -92,11 +92,19 @@ cursor:pointer;
 
                     <tbody >
                         {% for i in mo %}
-                        <tr class="table-row" data-href="{% url 'cash_flow_summary' %}" >
+                        <tr class="table-row" data-href="{% url 'cash_flow_summary' i.id %}" >
                             <td colspan="2" >{{i.month_name}}</td>
-                            <td style="text-align: center;"></td>
-                            <td style="text-align: center;"></td>
-                            <td style="text-align: center;"></td>
+                             {% if i.flow_set.all %} 
+                             {% for j in i.flow_set.all %}
+                            <td style="text-align: center;"><strong>{{j.Inflow}}</strong></td>
+                            <td style="text-align: center;"><strong>{{j.Outflow}}</strong></td>
+                            <td style="text-align: center;"><strong>{{j.NetFlow}}</strong></td>
+                            {% endfor %}
+                            {% else %}
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            {% endif %}
    
                         </tr>
                         {% endfor %}

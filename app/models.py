@@ -1,3 +1,4 @@
+from calendar import month
 from django.db import models
 
 # Create your models here.
@@ -29,6 +30,7 @@ class Group_inflow_outflow(models.Model):
     Group = models.ForeignKey(Groups,on_delete=models.CASCADE)
     Amount = models.IntegerField()
     Type = models.CharField(max_length=255,blank=True,null=True)
+    month = models.ForeignKey(Months,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Group.Group_name
@@ -44,6 +46,8 @@ class Sub(models.Model):
     Sub_group = models.ForeignKey(Sub_Group,on_delete=models.CASCADE)    
     Amount = models.IntegerField()
     Type = models.CharField(max_length=255,blank=True,null=True)
+
+
     def __str__(self):
         return self.Sub_group.Sub_Group_name
 
@@ -52,6 +56,7 @@ class Ledger_inflow_outflow(models.Model):
     Ledger=models.ForeignKey(Ledger,on_delete=models.CASCADE)
     Amount = models.IntegerField()
     Type = models.CharField(max_length=255,blank=True,null=True)
+
     def __str__(self):
         return self.Ledger.Ledger_name     
 
@@ -66,7 +71,20 @@ class Ledger_Vouchers(models.Model):
     Type = models.CharField(max_length=255,blank=True,null=True)
 
     def __str__(self):
-        return self.Ledger_inflow_outflow.Ledger.Ledger_name     
+        return self.Ledger_inflow_outflow.Ledger.Ledger_name 
+
+class Flow(models.Model):
+    Inflow =models.IntegerField(blank=True,null=True)
+    Outflow =models.IntegerField(blank=True,null=True)
+    NetFlow =models.IntegerField(blank=True,null=True)
+    month = models.ForeignKey(Months,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.month
+
+
+    
+
 
 
 
