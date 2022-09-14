@@ -148,7 +148,7 @@ cursor:pointer;
                             <td></td>
                             <td></td>
                             {% else %}
-                            {% if ledger.Ledger.Type == 'Dr' %}
+                            {% if ledger.Ledger.Type == 'Cr' %}
                             <td  style="text-align: right;"><strong>
                                
                                 {{ledger.Ledger.Opening_balance}}
@@ -170,7 +170,7 @@ cursor:pointer;
 
                         </tr>
                         <tr>
-                            <td colspan="5" style="text-align: right;"><strong>Total:</strong></td>
+                            <td colspan="5" style="text-align: right;"><strong>Current Total:</strong></td>
                             
                             <td  style="text-align: right;"><strong>
                                 {% if total_debit is not 0 %}
