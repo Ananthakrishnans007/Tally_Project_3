@@ -83,7 +83,7 @@ cursor:pointer;
                         <tbody>
                             {% for i in ledger %}
                             {% if i.Type == 'Inflow' %}
-                            <tr class="table-row" data-href="{% url 'ledger_vouchers' i.id %}" >
+                            <tr class="table-row" data-href="{% url 'cashflow_ledger_vouchers' i.Ledger.id %}" >
                            
                                 <td colspan="2" style="text-align: start;" >{{i.Ledger}}</td>
                                 <td  style="text-align: end;">{{i.Amount}}</td >
@@ -94,7 +94,7 @@ cursor:pointer;
        
                             </tr>
                             {% else %}
-                            <tr class="table-row" data-href="{% url 'ledger_vouchers' i.id %}" >
+                            <tr class="table-row" data-href="{% url 'cashflow_ledger_vouchers' i.Ledger.id %}" >
                            
                                 <td colspan="2" style="text-align: start;" >{{i.Ledger}}</td>
                                 <td  style="text-align: end;"></td >

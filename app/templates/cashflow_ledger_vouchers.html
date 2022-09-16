@@ -121,7 +121,7 @@ cursor:pointer;
                             
                                 
                             <th style="text-align: center;">
-                                <form action="{% url 'delete' i.id ledger.id %}" method="POST" id="myform">{% csrf_token %}
+                                <form action="{% url 'cashflow_vouchers_delete' i.id ledger.id %}" method="POST" id="myform">{% csrf_token %}
                                     <input name="_method" type="hidden" value="DELETE">
                                 <a  class="fa fa-trash delete" style="color: red;" ></a>
                             </form>
@@ -133,14 +133,14 @@ cursor:pointer;
                         <tr>
                             <td colspan="5" style="text-align: right;"><strong>Opening Balance: </strong></td>
                             
-                            {% if ledger.Ledger.Opening_balance == ""  %}
+                            {% if ledger.Ledger.ledger_opening_bal == ""  %}
                             
                             
                             {% else %}
-                            {% if ledger.Ledger.Type == 'Dr' %}
+                            {% if ledger.Ledger.ledger_type  == 'Dr' %}
                             <td  style="text-align: right;"><strong>
                                
-                                {{ledger.Ledger.Opening_balance}}
+                                {{ledger.Ledger.ledger_opening_bal}}
                                 
                             </strong></td>
                             
@@ -148,10 +148,10 @@ cursor:pointer;
                             <td></td>
                             <td></td>
                             {% else %}
-                            {% if ledger.Ledger.Type == 'Cr' %}
+                            {% if ledger.Ledger.ledger_type  == 'Cr' %}
                             <td  style="text-align: right;"><strong>
                                
-                                {{ledger.Ledger.Opening_balance}}
+                                {{ledger.Ledger.ledger_opening_bal}}
                                 
                             </strong></td>
                             

@@ -6,21 +6,21 @@ from . models import*
 
 admin.site.register(Months)
 
-admin.site.register(Ledger)
+admin.site.register(Ledger1)
 
-admin.site.register(Groups)
+admin.site.register(cash_flow_Groups)
 
 admin.site.register(Group_inflow_outflow)
 
-admin.site.register(Sub_Group)
+admin.site.register(cash_flow_Sub_Group)
 
-admin.site.register(Sub)
+admin.site.register(cash_flow_Sub)
 
 admin.site.register(Ledger_inflow_outflow)
 
-admin.site.register(Ledger_Vouchers)
+admin.site.register(cash_flow_Ledger_Vouchers)
 
-admin.site.register(Flow)
+admin.site.register(Cash_Flow)
 
 
 

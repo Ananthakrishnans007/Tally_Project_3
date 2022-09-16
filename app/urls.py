@@ -13,37 +13,15 @@ urlpatterns = [
 
     path('group_cash_flow_2/<int:id>',views.group_cash_flow_2,name='group_cash_flow_2'),
 
-    path('ledger_vouchers/<int:id>',views.ledger_vouchers,name='ledger_vouchers'),
+    path('cashflow_ledger_vouchers/<int:id>',views.cashflow_ledger_vouchers,name='cashflow_ledger_vouchers'),
 
-    path('delete/<int:id>/<int:pk>',views.delete,name='delete'),
+    path('cashflow_vouchers_delete/<int:id>/<int:pk>',views.cashflow_vouchers_delete,name='cashflow_vouchers_delete'),
 
-     path('test',views.test,name='test'),
-
-
+  
 
 
     
 
-
-    
-
-    
-
-
-
-
-    
-
-
-
-    path('test',views.test,name='test'),
-
-
-
-   
-
-
-    
 
     
 
