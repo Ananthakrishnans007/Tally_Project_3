@@ -6,7 +6,7 @@ from . models import*
 
 admin.site.register(Months)
 
-admin.site.register(Ledger1)
+admin.site.register(Ledger)
 
 admin.site.register(cash_flow_Groups)
 

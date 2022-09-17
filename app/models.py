@@ -14,7 +14,7 @@ class Months(models.Model):
 
 
 
-class Ledger1(models.Model):
+class Ledger(models.Model):
     ledger_name = models.CharField(max_length=255)
     ledger_opening_bal = models.IntegerField(blank=True,null=True)
     ledger_type = models.CharField(max_length=255,blank=True,null=True)    
@@ -53,7 +53,7 @@ class cash_flow_Sub(models.Model):
 
 class Ledger_inflow_outflow(models.Model):
     sub = models.ForeignKey(cash_flow_Sub,on_delete=models.CASCADE)
-    Ledger=models.ForeignKey(Ledger1,on_delete=models.CASCADE)
+    Ledger=models.ForeignKey(Ledger,on_delete=models.CASCADE)
     Amount = models.IntegerField(default=0,blank=True,null=True)
     Type = models.CharField(max_length=255,blank=True,null=True)
 
@@ -63,7 +63,7 @@ class Ledger_inflow_outflow(models.Model):
 class cash_flow_Ledger_Vouchers(models.Model):
     Ledger_inflow_outflow = models.ForeignKey(Ledger_inflow_outflow,on_delete=models.CASCADE)
     Date = models.DateField()
-    Particulars = models.ForeignKey(Ledger1,on_delete=models.CASCADE)
+    Particulars = models.ForeignKey(Ledger,on_delete=models.CASCADE)
     Vch_Type = models.CharField(max_length=255)
     Vch_No = models.IntegerField()
     Debit =models.IntegerField(blank=True,null=True)
